@@ -20,17 +20,16 @@ const getWeather = (location) => {
         data.forecast.today.feels_like.morn
       }°C in the morning and ${
         data.forecast.today.feels_like.eve
-      }°C in the evening`
+      }°C in the evening. The humidity is at ${data.forecast.today.humidity}%.`
       messageThree.textContent = `Tomorrow: ${capitalizeFirstLetter(
         data.forecast.tomorrow.weather
       )} - Feel likes ${
         data.forecast.tomorrow.feels_like.morn
       }°C in the morning and ${
         data.forecast.tomorrow.feels_like.eve
-      }°C in the evening`
-      // console.log(data.location)
-      console.log(data.forecast.today.feels_like)
-      console.log(data.forecast.tomorrow.feels_like)
+      }°C in the evening. The humidity will be at ${
+        data.forecast.tomorrow.humidity
+      }%.`
     })
   })
 }

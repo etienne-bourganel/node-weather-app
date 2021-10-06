@@ -18,11 +18,13 @@ const forecast = (latitude, longitude, callback) => {
           time: time(0),
           feels_like: daily[0].feels_like,
           weather: daily[0].weather[0].description,
+          humidity: daily[0].humidity,
         },
         tomorrow: {
           time: time(1),
           feels_like: daily[1].feels_like,
           weather: daily[1].weather[0].description,
+          humidity: daily[1].humidity,
         },
       })
     }
