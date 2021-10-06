@@ -68,7 +68,6 @@ app.get('/weather', (req, res) => {
         forecast: forecastData,
         address,
       })
-      console.log(forecastData)
     })
   })
 })
