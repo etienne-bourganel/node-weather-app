@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
+require('dotenv').config()
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 const app = express()
@@ -101,4 +102,3 @@ app.get('*', (req, res) => {
 app.listen(3000, () => {
   console.info('Server is up on port 3000')
 })
-

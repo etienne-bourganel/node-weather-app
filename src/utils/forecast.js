@@ -2,7 +2,7 @@ const request = require('postman-request')
 
 const forecast = (latitude, longitude, callback) => {
   const key = '475606e75b5c68704dd04dca251d5e4a'
-  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&appid=${key}&units=metric`
+  const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&appid=${process.env.WEATHER_API_KEY}&units=metric`
 
   request({ url, json: true }, (error, { body }) => {
     const { message, daily } = body
