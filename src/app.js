@@ -4,7 +4,9 @@ const hbs = require('hbs')
 require('dotenv').config()
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
+
 const app = express()
+const port = process.env.PORT || 3000
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -99,6 +101,6 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(3000, () => {
-  console.info('Server is up on port 3000')
+app.listen(port, () => {
+  console.info(`Server is up on port ${port}`)
 })

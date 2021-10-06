@@ -8,33 +8,31 @@ const capitalizeFirstLetter = (string) => {
 }
 
 const getWeather = (location) => {
-  fetch(`http://localhost:3000/weather?address=${location}`).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.error) {
-          return (messageOne.textContent = `Could not find any weather data for ${location}. Please try again with another location.`)
-        }
-        messageOne.textContent = data.location
-        messageTwo.textContent = `Today: ${capitalizeFirstLetter(
-          data.forecast.today.weather
-        )} - Feel likes ${
-          data.forecast.today.feels_like.morn
-        }°C in the morning and ${
-          data.forecast.today.feels_like.eve
-        }°C in the evening`
-        messageThree.textContent = `Tomorrow: ${capitalizeFirstLetter(
-          data.forecast.tomorrow.weather
-        )} - Feel likes ${
-          data.forecast.tomorrow.feels_like.morn
-        }°C in the morning and ${
-          data.forecast.tomorrow.feels_like.eve
-        }°C in the evening`
-        // console.log(data.location)
-        console.log(data.forecast.today.feels_like)
-        console.log(data.forecast.tomorrow.feels_like)
-      })
-    }
-  )
+  fetch(`/weather?address=${location}`).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        return (messageOne.textContent = `Could not find any weather data for ${location}. Please try again with another location.`)
+      }
+      messageOne.textContent = data.location
+      messageTwo.textContent = `Today: ${capitalizeFirstLetter(
+        data.forecast.today.weather
+      )} - Feel likes ${
+        data.forecast.today.feels_like.morn
+      }°C in the morning and ${
+        data.forecast.today.feels_like.eve
+      }°C in the evening`
+      messageThree.textContent = `Tomorrow: ${capitalizeFirstLetter(
+        data.forecast.tomorrow.weather
+      )} - Feel likes ${
+        data.forecast.tomorrow.feels_like.morn
+      }°C in the morning and ${
+        data.forecast.tomorrow.feels_like.eve
+      }°C in the evening`
+      // console.log(data.location)
+      console.log(data.forecast.today.feels_like)
+      console.log(data.forecast.tomorrow.feels_like)
+    })
+  })
 }
 // messageOne.textContent = 'From JS'
 
