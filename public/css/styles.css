@@ -36,6 +36,10 @@ header a {
   text-decoration: none;
 }
 
+.aboutText {
+  margin: 2rem 2rem 4rem 0;
+}
+
 .portrait {
   width: 250px;
 }
